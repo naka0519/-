@@ -3,6 +3,7 @@ import logging
 import subprocess
 import datetime as dt
 import time
+import os
 
 # 使用しているビーコン
 Beacon_Macaddr = "04:0d:84:7a:60:d2"
@@ -19,7 +20,7 @@ def scanBeaconRssi():
     masterdate = dt.datetime.now()
     rssi = 0
     # エラーログの設定
-    logging.basicConfig(filename="/home/pi/workdir/Otohime/Insert-music-when-you-are-in-a-bath-room/log/SensorErr.log", level=logging.INFO)
+    logging.basicConfig(filename= os.getcwd() + "/log/SensorErr.log", level=logging.INFO)
 
     scanner = btle.Scanner(0) # 0であること!!
     try:
@@ -31,7 +32,7 @@ def scanBeaconRssi():
                 print(rssi)
 
                 # csvに書き込み
-                # with open('/home/pi/workdir/Otohime/Insert-music-when-you-are-in-a-bath-room/Beacon_rssi.csv', 'a') as f:
+                # with open(os.getcwd() + 'beacon/Beacon_rssi.csv', 'a') as f:
                 #     writer = csv.writer(f)
                 #     writer.writerow([rssi])
 

@@ -3,10 +3,11 @@
 
 import pygame.mixer
 import time
+import os
 
 def playMusic():
     # ファイルPath
-    MusicPath = "/home/pi/workdir/Otohime/Insert-music-when-you-are-in-a-bath-room/music_folder"
+    MusicPath = os.getcwd() + "/music_folder"
     # 音楽ファイル名（ランダムにしたい）
     MusicTitle = "/sample1.mp3"
     # mixerモジュールの初期化

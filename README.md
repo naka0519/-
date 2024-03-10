@@ -5,3 +5,4 @@
  - ラズパイ 4B
  - ダイソー スピーカー
  - Hibeacon
+ - omron env sensor
